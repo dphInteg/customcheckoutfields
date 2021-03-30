@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="dphinteg_customcheckoutfields_process_js_layout_of_block_after" type="DphInteg\CustomCheckoutFields\Plugin\Block\Checkout\LayoutProcessor"/>
+    </type>
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="dphinteg_customcheckoutfields_before_save_address_information" type="DphInteg\CustomCheckoutFields\Plugin\Checkout\Model\ShippingInformationManagement" sortOrder="1"/>
+    </type>
+    <preference for="Magento\Sales\Model\OrderRepository" type="DphInteg\CustomCheckoutFields\Model\OrderRepository"/>
+    <type name="DphInteg\CustomCheckoutFields\Model\OrderRepository">
+    <arguments>
+        <argument name="metadata" xsi:type="object">orderMetadata</argument>
+    </arguments>
+    </type>
+</config>

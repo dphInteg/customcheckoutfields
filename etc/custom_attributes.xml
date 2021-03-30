@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/custom_attributes.xsd">
+    <custom_attributes for="Magento\Quote\Api\Data\AddressInterface">
+        <attribute code="barangay" type="string"/>
+    </custom_attributes>
+    <custom_attributes for="Magento\Sales\Api\Data\OrderAddressInterface">
+        <attribute code="barangay" type="string"/>
+    </custom_attributes>
+</config>
